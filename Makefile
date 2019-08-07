@@ -9,5 +9,8 @@ download:
 submit:
 	$(KAGGLE) competitions submit $(COMP) -f $(RESULT_FILE) -m "$(MESSAGE)" 
 
+submissions:
+	$(KAGGLE) competitions submissions $(COMP)
+
 clean:
 	rm -f ./$(DATA_DIR)/*.csv.zip
