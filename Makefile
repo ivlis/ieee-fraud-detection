@@ -6,6 +6,9 @@ RESULT_FILE=result.csv
 download: 
 	$(KAGGLE) competitions download -p $(DATA_DIR)  $(COMP)
 
+preprocess:
+	./data2bin.py
+
 submit:
 	$(KAGGLE) competitions submit $(COMP) -f $(RESULT_FILE) -m "$(MESSAGE)" 
 
